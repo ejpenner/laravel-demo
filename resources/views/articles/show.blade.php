@@ -3,7 +3,7 @@
 @section('content')
     <h1>{{ $article->title }}</h1>
 
-    <div class="container" style="padding:10px;">
+    <div class="container">
         {!! link_to_route('articles.index', 'Back', null, ['class' => 'btn btn-info']) !!} | {{ $article->created_at->format('M-d-Y h:ia') }} | <small>{{ $article->created_at->diffForHumans() }}</small> <br><br>
         @if(!Auth::guest())
             @if (Auth::user()->id == $article->user_id)
@@ -18,7 +18,7 @@
         <p>
             {{ $article->body }}
         </p>
-        {!! Html::image($article->getImage(), '', ['style' => 'border: solid black 1px; padding:1px;']) !!}
+        {!! Html::image($article->getImage(), '', ['class'=>'article']) !!}
     </div>
 
     @unless($article->tags->isEmpty())

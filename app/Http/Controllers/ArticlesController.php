@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -13,7 +12,6 @@ use App\Article;
 use App\Tag;
 use Session;
 use Validator;
-//use Request;
 
 class ArticlesController extends Controller
 {
@@ -82,7 +80,7 @@ class ArticlesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Article $article)
-    {
+    { //277r16095
         return view('articles.show', compact('article'));
     }
 
@@ -95,6 +93,9 @@ class ArticlesController extends Controller
     public function edit(Article $article)
     {
         $tags = Tag::lists('name','id');
+        //$tagsList = $article->tags()->pluck('id');
+
+        //dd($tagsList);
         if(Auth::user()->id == $article->user_id)
         {
             return view('articles.edit', compact('article','tags'));
@@ -114,21 +115,17 @@ class ArticlesController extends Controller
     public function update(Request $request, Article $article)
     {
         $article->update($request->except('image','published_at')); // first update the texts only
-        $imageStatus = '';
 
-        if( $request->has('image') ) {  /// check if an image is attached
-            if($article->deleteImages()) {
-                $article->setImage($request); // update the image
-                $article->setThumbnail($request); // update the thumbnail
-                $article->update(); // set the image update
-                $imageStatus = ', and files updated successfully.';
-            } else {
-                $imageStatus = ', but files deletion failed.';
-            }
+        $imageStatus = $article->updateImage($request);
+
+        if($request->input('tag_list') === null) {
+            $tagList = [];
+        } else {
+            $tagList = $request->input('tag_list');
         }
-        $article->tags()->attach($request->input('tag_list'));
-        Session::flash('success', 'Updated Article Successfully'.$imageStatus);
-        return redirect('articles/'.$article->id.'');
+        $article->tags()->sync($tagList);
+
+        return redirect('articles/'.$article->id.'')->with('message', 'Updated Article Successfully'.$imageStatus);
     }
 
     /**
@@ -145,6 +142,7 @@ class ArticlesController extends Controller
         } else {
             $deleteText = 'and file deletion failed!';
         }
+        $article->tags()->detach();
         $article->delete();
         // redirect to the article index
 

@@ -11,12 +11,12 @@
     {!! Form::input('datetime', 'published_at', date('Y-m-d h:i:s'), ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('file', 'File:') !!}
+    {!! Form::label('image', 'File:') !!}
     {!! Form::file('image', null) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('taglist', 'Tags:') !!}
-    {!! Form::select('taglist[]', $tags, $tagList, ['class' => 'form-control', 'multiple']) !!}
+    {!! Form::label('tag_list', 'Tags:') !!}
+    {!! Form::select('tag_list[]', $tags, null, ['class' => 'form-control', 'multiple']) !!}
 </div>
 <div class="form-group">
     {!! Form::submit($submitText, ['class' => 'btn btn-primary form-control']) !!}

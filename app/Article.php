@@ -205,5 +205,18 @@ class Article extends Model
 
     }
 
-
+    public function updateImage($request)
+    {
+        if( $request->file('image') !== null ) {  /// check if an image is attached
+            if($this->deleteImages()) {
+                $this->setImage($request); // update the image
+                $this->setThumbnail($request); // update the thumbnail
+                $this->update(); // set the image update
+                return ', and files updated successfully.';
+            } else {
+                return ', but files deletion failed.';
+            }
+            return ', and the image is unchanged.';
+        }
+    }
 }

@@ -1,2 +1,36 @@
+.articleImage {
+    border: solid #DDD 1px;
+    padding:1px;
+    border-radius:10px
+}
 
+.article {
+    padding: 0px;
+}
+
+.jumbotron {
+
+}
+
+.article {
+}
+
+.bannerTop {
+    background-image: url( 'header_bg.jpg' );
+    background-position: center;
+    color: #e8e8e8 !important;
+}
+.bannerTop small {
+    color: #d5d5d5 !important;
+}
+
+.mainPage {
+    background: #CCC !important;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+body {
+    background: #777 !important;
+}
 /*# sourceMappingURL=app.css.map */

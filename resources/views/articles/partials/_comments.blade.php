@@ -9,7 +9,10 @@
                 <div class="col-md-1">
                     <h4><b>{{ $comment->getUsername() }}</b> <i>posted:</i></h4>
                     @if (Auth::user()->id == $comment->user_id)
+                        {!! Form::open(['class' => 'form-inline', 'method' => 'DELETE', 'route' => ['articles.comments.destroy', $article->id, $comment->id]]) !!}
                         {!! link_to_route('articles.comments.edit', 'Edit', [$article->id, $comment->id], ['class' => 'btn btn-info']) !!}
+                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        {!! Form::close() !!}
                     @endif
                 </div>
                 <div class="col-md-8" style="padding-top:20px;">

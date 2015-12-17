@@ -112,7 +112,8 @@ class CommentsController extends Controller
      */
     public function destroy(Article $article, Comment $comment)
     {
-        $article->comment()->delete();
+       // $article->comments()->where('id', $comment->id)->delete();
+        $article->comments()->delete();
 
         Session::flash('success', 'Comment deleted');
 
