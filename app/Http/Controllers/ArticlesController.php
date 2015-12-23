@@ -29,7 +29,7 @@ class ArticlesController extends Controller
         //$articles = Article::latest('published_at')->get();
         //$articles = Article::latest('published_at')->where('published_at', '<=', Carbon::now())->get();
 
-        $articles = Article::latest('published_at')->published()->get();
+        $articles = Article::latest('published_at')->published()->paginate(6);
         return view('articles.index', compact('articles'));
     }
 

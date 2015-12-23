@@ -1,7 +1,13 @@
 /vendor
+
 /node_modules
+
 /public/images
+
 /public/images/thumbnails
+
 Homestead.yaml
+
 Homestead.json
+
 .env
