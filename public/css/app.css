@@ -13,10 +13,12 @@
 }
 
 .article {
+    align-content: center;
+
 }
 
 .bannerTop {
-    background-image: url( 'header_bg.jpg' );
+    background-image: url( 'header_bg.png' );
     background-position: center;
     color: #e8e8e8 !important;
 }
