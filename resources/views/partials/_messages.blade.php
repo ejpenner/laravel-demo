@@ -3,6 +3,8 @@
         <p>{{ Session::get('message') }}</p>
     </div>
     <script>
-        $('#alert').delay(2000).fadeOut(400)
+        $(document).ready(function(){
+            $('#alert').delay(2000).fadeOut(400);
+        });
     </script>
 @endif

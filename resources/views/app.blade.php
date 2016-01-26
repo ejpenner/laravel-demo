@@ -3,7 +3,7 @@
     <head>
         <title>Lara5Demo Application</title>
         {!! Html::style('css/app.css') !!}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        {!! Html::script('jquery-2.2.0.min.js') !!}
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
     </head>
 
@@ -26,6 +26,5 @@
             @include('errors.list')
             @yield('footer')
         </div>
-l
     </body>
 </html>

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="PublishConfigData" serverName="Laravel 5 Demos">
     <serverData>
-      <paths name="Laravel 5 Demos">
+      <paths name="Gallere">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="laraveldemo.app" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
