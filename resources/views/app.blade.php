@@ -2,14 +2,16 @@
 <html lang="en">
     <head>
         <title>Lara5Demo Application</title>
-        {!! Html::style('css/app.css') !!}
+
+        {!! Html::style('css/bootstrap.css') !!}
         {!! Html::script('jquery-2.2.0.min.js') !!}
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+        {!! Html::script('js/bootstrap.js') !!}
+        {!! Html::script('js/app.js') !!}
+        {!! Html::style('css/app.css') !!}
     </head>
 
-    <body>
-
-
+    <body  id="main">
+    <div>
         <div class="container">
             @include('partials._messages')
             <div class="jumbotron bannerTop">
@@ -26,5 +28,6 @@
             @include('errors.list')
             @yield('footer')
         </div>
+    </div>
     </body>
 </html>
