@@ -2,23 +2,25 @@
 
 @section('content')
     <h1>{{ $article->title }}</h1>
-
     <div class="container">
-        {!! link_to_route('articles.index', 'Back', null, ['class' => 'btn btn-info']) !!} | {{ $article->created_at->format('M-d-Y h:ia') }} | <small>{{ $article->created_at->diffForHumans() }}</small> <br><br>
-        @if(!Auth::guest())
-            @if (Auth::user()->id == $article->user_id)
-                {!! Form::open(['class' => 'form-inline', 'method' => 'DELETE', 'route' => ['articles.destroy', $article->id]]) !!}
-                {!! link_to_route('articles.edit', 'Edit', $article->id, ['class' => 'btn btn-info']) !!}
-                |
-                {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                {!! Form::close() !!}
-            @endif
-        @endif
-        <hr>
-        <p>
+        <div class="container articleImageShow">
+            {!! Html::image($article->getImage(), '', ['class'=>'image']) !!}
+            <div class="container-fluid articleButtons">
+                {!! link_to_route('articles.index', 'Back', null, ['class' => 'btn btn-info']) !!} | {{ $article->created_at->format('M-d-Y h:ia') }} | <small>{{ $article->created_at->diffForHumans() }}</small> <br><br>
+                @if(!Auth::guest())
+                    @if (Auth::user()->id == $article->user_id)
+                        {!! Form::open(['class' => 'form-inline', 'method' => 'DELETE', 'route' => ['articles.destroy', $article->id]]) !!}
+                        {!! link_to_route('articles.edit', 'Edit', $article->id, ['class' => 'btn btn-info']) !!}
+                        |
+                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                        {!! Form::close() !!}
+                    @endif
+                @endif
+            </div>
+        </div>
+        <div class="articleBody">
             {{ $article->body }}
-        </p>
-        {!! Html::image($article->getImage(), '', ['class'=>'article']) !!}
+        </div>
     </div>
 
     @unless($article->tags->isEmpty())

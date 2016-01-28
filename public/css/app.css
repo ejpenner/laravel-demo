@@ -6,6 +6,8 @@
 
 .article {
     padding: 0px;
+    background: #898989 !important;
+    border-radius: 10px;
 }
 
 .jumbotron {
@@ -27,9 +29,48 @@
 }
 
 .mainPage {
-    background: #CCC !important;
+    background: #B0BEC5 !important;
     padding: 10px;
     border-radius: 10px;
+}
+
+.articleBody {
+    border-radius: 10px;
+    background-color: #CCC;
+    padding: 20px;
+    margin: 5px;
+}
+
+.articleImageShow {
+    margin:auto;
+    padding:10px;
+    background-color: #aaaaaa;
+    border-radius: 10px;
+    text-align: center;
+    width:auto;
+}
+
+.image {
+    border-radius: 10px;
+    border: solid #3c3c3c;
+    width:90%
+}
+
+.articleButtons {
+    margin:5px;
+}
+
+.commentHead {
+    padding:5px;
+    background-color: #999;
+    border-radius: inherit;
+}
+
+.comment {
+    border-radius: 10px;
+    background-color: #CCC;
+    padding:2px;
+    margin: 5px;
 }
 
 html, body{
@@ -47,6 +88,12 @@ html, body{
 /*# sourceMappingURL=app.css.map */
 
 #main {
+    background: url('nebula021514_2016.jpg') center top no-repeat;
+    background-repeat: no-repeat, no-repeat, repeat-x;
+    background-position: right top, left top, center top;
+}
+
+.main {
     background: url('nebula021514_2016.jpg') center top no-repeat;
     background-repeat: no-repeat, no-repeat, repeat-x;
     background-position: right top, left top, center top;
