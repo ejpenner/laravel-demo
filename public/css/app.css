@@ -1,7 +1,11 @@
 .articleImage {
-    border: solid #DDD 1px;
+    border: solid #888 1px;
     padding:1px;
     border-radius:10px
+}
+
+h1 {
+    color: #2f6fad;
 }
 
 .article {
@@ -27,7 +31,7 @@
 }
 
 .mainPage {
-    background: #CCC !important;
+    background: #adadad !important;
     padding: 10px;
     border-radius: 10px;
 }
