@@ -2,10 +2,6 @@
 
 /node_modules
 
-!/public/images
-
-!/public/images/thumbnails
-
 /public/images/*
 
 /public/images/thumbnails/*
