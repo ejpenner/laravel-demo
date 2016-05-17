@@ -8,7 +8,10 @@
 
 ## Documentation
 
-#Make sure to create and images directory in public and a thumbnail directory inside images for images to save
+### Clone the repo
+### run `composer install` inside the project directory
+### run `php artisan migrate` to run the migrations
+### Make sure to create and `images` directory in `public` and a `thumbnail` directory inside `images` for images to save properly
 
 ## Contributing
 
