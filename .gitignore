@@ -10,7 +10,7 @@
 
 /public/images/thumbnails/*
 
-.idea
+/.idea
 
 Homestead.yaml
 
