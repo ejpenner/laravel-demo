@@ -10,7 +10,7 @@
         {!! Html::style('css/app.css') !!}
     </head>
 
-    <body  id="main">
+    <body id="main">
     <div>
         <div class="container">
             @include('partials._messages')
